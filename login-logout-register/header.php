@@ -43,11 +43,16 @@
                 <?php echo $currentUser['fullname'] ?>
               </a>
               <?php else : ?>
-              <a class="nav-link disabled" href="#">
-                Khách
-              </a>
+            </li>
+             <?php endif; ?>
+ +            <?php if (!$currentUser) : ?>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#">
+                  Khách
+                </a>
               <?php endif; ?>
             </li>
+            <?php endif; ?>
           </ul>
         </div>
       </nav>
