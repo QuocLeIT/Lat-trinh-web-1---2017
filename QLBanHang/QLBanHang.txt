@@ -1,0 +1,97 @@
+CREATE TABLE `sanpham` (
+  `id` int(11) NOT NULL,
+  `TenSP` varchar(1024) NOT NULL,
+    `SoLuotXem` int(11) NOT NULL DEFAULT 0,
+    `GiaBan` int(11) NOT NULL,
+    `SoLuongBan` int(11) NOT NULL,
+    `SoLuongTon` int(11) NOT NULL,
+    `XuatXu` varchar(255) NOT NULL,
+    `idLoai` int(11) not NULL,
+    `idNhaSanXuat` int(11) not NULL,
+  `content` varchar(1024) NOT NULL,
+  `createdAt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `fullname` varchar(255) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(60) NOT NULL,
+   `admin` int(11) NOT NULL DEFAULT 0,
+  `hasAvatar` int(11) DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `DonHang` (
+  `id` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+ `GiaoHang` int(11) NOT NULL DEFAULT -1,
+  `NgayLap` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `ChiTietDonHang` (
+  `id` int(11) NOT NULL,
+  `idSanPham` int(11) NOT NULL,
+  `SoLuongMua` int(11) NOT NULL,
+ `GiaMua` int(11) NOT NULL,
+    `idDonHang` int(11) NOT NULL DEFAULT 0,
+   `ThanhToan` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `LoaiSP` (
+  `id` int(11) NOT NULL,
+  `TenNhaSanXuat` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `NhaSanXuat` (
+  `id` int(11) NOT NULL,
+  `TenLoai` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+ALTER TABLE `sanpham`
+  ADD PRIMARY KEY (`id`);
+  
+ALTER TABLE `LoaiSP`
+  ADD PRIMARY KEY (`id`);
+    
+ALTER TABLE `NhaSanXuat`
+  ADD PRIMARY KEY (`id`);
+  
+ ALTER TABLE `DonHang`
+  ADD PRIMARY KEY (`id`);
+  
+ALTER TABLE `ChiTietDonHang`
+  ADD PRIMARY KEY (`id`);
+
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+
+-- AUTO_INCREMENT for table `sanpham`
+--
+ALTER TABLE `DonHang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+ALTER TABLE `ChiTietDonHang`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+ALTER TABLE `sanpham`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  
+ALTER TABLE `LoaiSP`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  
+ALTER TABLE `NhaSanXuat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
