@@ -42,6 +42,13 @@ function createPost($userId, $content) {
   return $db->lastInsertId();
 }
 
+function createLoai($tenloai) {
+  global $db;
+  $stmt = $db->prepare("INSERT INTO loaisp (TenLoaiSP) VALUE (?)");
+  $stmt->execute(array($tenloai));
+  return $db->lastInsertId();
+}
+
 function getNewFeeds() {
   global $db;
   $stmt = $db->prepare("SELECT p.id, p.userId, u.fullname as userFullname, u.hasAvatar as userHasAvatar, p.content, p.createdAt FROM posts as p LEFT JOIN users as u ON u.id = p.userId ORDER BY createdAt DESC");
@@ -49,6 +56,8 @@ function getNewFeeds() {
   $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
   return $posts;
 }
+
+
 
 function getNewFeedsForUserId($userId) {
   global $db;
@@ -136,4 +145,13 @@ function resetPassword2($email, $password) {
   global $db;
   $stmt = $db->prepare("UPDATE users set password = ? where email = ?");
   $stmt->execute(array($password, $email));
+}
+
+
+function getLoaiSP() {
+  global $db;
+  $stmt = $db->prepare("SELECT id, TenLoaiSP from loaisp where TenLoaiSP");
+  $stmt->execute();
+  $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  return $posts;
 }
