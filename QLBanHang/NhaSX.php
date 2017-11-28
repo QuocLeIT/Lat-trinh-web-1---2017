@@ -2,16 +2,16 @@
 require_once 'init.php';
 
 if ($currentUser) {
-  $listLoaiSP = getLoaiSP();
+  $listLoaiSP = getNhaSX();
 }
 
 if (!empty($_POST['tenloai'])) {
     $tenloai = $_POST['tenloai'];
 
-    $insertId = createLoai($tenloai);
+    $insertId = createNhaSX($tenloai);
       
       // Redirect to home page
-      header('Location: Loai.php');
+      header('Location: NhaSX.php');
       exit();
   }
 
@@ -19,7 +19,7 @@ if (!empty($_POST['tenloai'])) {
 
 <?php include 'header.php' ?>
 
-<h1>Loại sản phẩm</h1>
+<h1>Nhà sản xuất</h1>
 
 <form method="POST">
   <div class="form-group">
@@ -35,8 +35,8 @@ if (!empty($_POST['tenloai'])) {
 <table class="table table-hover">
     <thead>
         <tr class="">
-                        <th class="">Mã loại</th>
-                        <th class="">Tên loại sản phẩm</th>          
+                        <th class="">Mã nhà sản xuất</th>
+                        <th class="">Tên nhà sản xuất</th>          
         </tr>
     </thead>
     <tbody>
@@ -48,7 +48,7 @@ if (!empty($_POST['tenloai'])) {
                 </td>
 
                 <td>
-                    <?php echo $posts['TenLoaiSP'] ?>                               
+                    <?php echo $posts['TenNhaSX'] ?>                               
                 </tr>                    
         <?php endforeach; ?>                    
     <?php endif ?>

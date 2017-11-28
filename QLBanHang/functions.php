@@ -150,7 +150,22 @@ function resetPassword2($email, $password) {
 
 function getLoaiSP() {
   global $db;
-  $stmt = $db->prepare("SELECT id, TenLoaiSP from loaisp where TenLoaiSP");
+  $stmt = $db->prepare("SELECT id, TenLoaiSP from loaisp order by TenLoaiSP");
+  $stmt->execute();
+  $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  return $posts;
+}
+
+function createNhaSX($tenloai) {
+  global $db;
+  $stmt = $db->prepare("INSERT INTO nhasanxuat (TenNhaSX) VALUE (?)");
+  $stmt->execute(array($tenloai));
+  return $db->lastInsertId();
+}
+
+function getNhaSX() {
+  global $db;
+  $stmt = $db->prepare("SELECT id, TenNhaSX from nhasanxuat order by TenNhaSX");
   $stmt->execute();
   $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
   return $posts;
