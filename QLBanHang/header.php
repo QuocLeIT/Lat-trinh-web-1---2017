@@ -29,10 +29,10 @@
             </li>
 
             <li class="nav-item <?php echo ($page == 'register') ? 'active' : '' ?>">
-              <a class="nav-link" href="#">Xem sản phẩm theo loại</a>
+              <a class="nav-link" href="#">Loại</a>
             </li>
             <li class="nav-item <?php echo ($page == 'register') ? 'active' : '' ?>">
-              <a class="nav-link" href="#">Xem sản phẩm theo nhà sản xuất</a>
+              <a class="nav-link" href="#">Nhà sản xuất</a>
             </li>
 
             <?php if (!$currentUser) : ?>
@@ -53,6 +53,20 @@
                   Đăng sản phẩm
                 </a>
               </li>
+
+              <div class="dropdown">
+                <button class="dropbtn">
+                    <a class="nav-link <?php echo ($page == 'profile') ? 'active' : '' ?>" href="#">
+                      Admin
+                    </a>
+                </button>
+                <div class="dropdown-content">
+                  <a href="DonHang.php">Hóa đơn hàng</a>
+                  <a href="Loai.php">DS loại sản phẩm</a>
+                  <a href="NhaSX.php">DS nhà sản xuất</a>
+                </div>
+              </div> 
+
             <?php endif; ?>
            
            
