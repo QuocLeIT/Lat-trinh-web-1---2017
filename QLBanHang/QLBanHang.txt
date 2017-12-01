@@ -42,13 +42,13 @@ CREATE TABLE `ChiTietDonHang` (
 
 CREATE TABLE `LoaiSP` (
   `id` int(11) NOT NULL,
-  `TenNhaSanXuat` varchar(255) NOT NULL
+  `TenLoaiSP` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
 CREATE TABLE `NhaSanXuat` (
   `id` int(11) NOT NULL,
-  `TenLoai` varchar(255) NOT NULL
+  `TenNhaSX` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
