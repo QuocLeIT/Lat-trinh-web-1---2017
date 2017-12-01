@@ -1,0 +1,14 @@
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\bin\Debug\1460130_QLPhongMachTu.exe
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\bin\Debug\1460130_QLPhongMachTu.pdb
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\_1460130_QLPhongMachTu.Form1.resources
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\_1460130_QLPhongMachTu.Properties.Resources.resources
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\1460130_QLPhongMachTu.csproj.GenerateResource.Cache
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\1460130_QLPhongMachTu.exe
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\1460130_QLPhongMachTu.pdb
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\_1460130_QLPhongMachTu.frmDanhSachKhamBenh.resources
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\_1460130_QLPhongMachTu.frm_LoaiBenh.resources
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\_1460130_QLPhongMachTu.frmThuoc.resources
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\_1460130_QLPhongMachTu.frmCachDung.resources
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\_1460130_QLPhongMachTu.frmDonViTinh.resources
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\1460130_QLPhongMachTu.csprojResolveAssemblyReference.cache
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\_1460130_QLPhongMachTu.frmPhieuKhamBenhNhanForm2.resources
