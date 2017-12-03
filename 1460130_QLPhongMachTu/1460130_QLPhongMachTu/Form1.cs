@@ -30,7 +30,8 @@ namespace _1460130_QLPhongMachTu
 
         private void danhSáchBệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmDSBenhNhan frm = new frmDSBenhNhan();
+            frm.Show();
         }
 
         private void loạiBệnhToolStripMenuItem_Click(object sender, EventArgs e)

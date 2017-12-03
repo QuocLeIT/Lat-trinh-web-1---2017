@@ -40,6 +40,7 @@
             this.dgvLoaiBenh = new System.Windows.Forms.DataGridView();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTenLoaiBenh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXoaTrang = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -52,7 +53,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(595, 56);
+            this.panel1.Size = new System.Drawing.Size(650, 56);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -68,6 +69,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnXoaTrang);
             this.groupBox1.Controls.Add(this.btnCapNhat);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThem);
@@ -76,14 +78,14 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(595, 62);
+            this.groupBox1.Size = new System.Drawing.Size(650, 62);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(509, 23);
+            this.btnCapNhat.Location = new System.Drawing.Point(557, 23);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(74, 21);
             this.btnCapNhat.TabIndex = 6;
@@ -93,7 +95,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(429, 23);
+            this.btnXoa.Location = new System.Drawing.Point(477, 23);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(74, 21);
             this.btnXoa.TabIndex = 7;
@@ -103,7 +105,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(349, 23);
+            this.btnThem.Location = new System.Drawing.Point(397, 23);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(74, 21);
             this.btnThem.TabIndex = 8;
@@ -133,7 +135,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 118);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(595, 389);
+            this.groupBox2.Size = new System.Drawing.Size(650, 389);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách loại bệnh";
@@ -148,7 +150,7 @@
             this.dgvLoaiBenh.Location = new System.Drawing.Point(3, 16);
             this.dgvLoaiBenh.Name = "dgvLoaiBenh";
             this.dgvLoaiBenh.ReadOnly = true;
-            this.dgvLoaiBenh.Size = new System.Drawing.Size(589, 370);
+            this.dgvLoaiBenh.Size = new System.Drawing.Size(644, 370);
             this.dgvLoaiBenh.TabIndex = 0;
             this.dgvLoaiBenh.CurrentCellChanged += new System.EventHandler(this.dgvLoaiBenh_CurrentCellChanged);
             // 
@@ -157,6 +159,7 @@
             this.ColID.DataPropertyName = "ID";
             this.ColID.HeaderText = "ID";
             this.ColID.Name = "ColID";
+            this.ColID.ReadOnly = true;
             this.ColID.Visible = false;
             // 
             // ColTenLoaiBenh
@@ -164,12 +167,23 @@
             this.ColTenLoaiBenh.DataPropertyName = "LoaiBenh";
             this.ColTenLoaiBenh.HeaderText = "Loại bệnh";
             this.ColTenLoaiBenh.Name = "ColTenLoaiBenh";
+            this.ColTenLoaiBenh.ReadOnly = true;
+            // 
+            // btnXoaTrang
+            // 
+            this.btnXoaTrang.Location = new System.Drawing.Point(317, 23);
+            this.btnXoaTrang.Name = "btnXoaTrang";
+            this.btnXoaTrang.Size = new System.Drawing.Size(74, 21);
+            this.btnXoaTrang.TabIndex = 9;
+            this.btnXoaTrang.Text = "Xóa trắng";
+            this.btnXoaTrang.UseVisualStyleBackColor = true;
+            this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
             // 
             // frm_LoaiBenh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 507);
+            this.ClientSize = new System.Drawing.Size(650, 507);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -200,5 +214,6 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTenLoaiBenh;
+        private System.Windows.Forms.Button btnXoaTrang;
     }
 }

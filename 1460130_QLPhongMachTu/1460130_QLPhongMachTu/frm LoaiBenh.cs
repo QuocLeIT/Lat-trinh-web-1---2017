@@ -160,5 +160,10 @@ namespace _1460130_QLPhongMachTu
 
             }
         }
+
+        private void btnXoaTrang_Click(object sender, EventArgs e)
+        {
+            txtTen.Text = "";
+        }
     }
 }

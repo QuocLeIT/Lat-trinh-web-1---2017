@@ -12,3 +12,4 @@ E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\14
 E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\_1460130_QLPhongMachTu.frmDonViTinh.resources
 E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\1460130_QLPhongMachTu.csprojResolveAssemblyReference.cache
 E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\_1460130_QLPhongMachTu.frmPhieuKhamBenhNhanForm2.resources
+E:\HOC TAP\Lập trình ứng dụng quản lý 1\Do an\1460130_QLPhongMachTu\1460130_QLPhongMachTu\obj\Debug\_1460130_QLPhongMachTu.frmDSBenhNhan.resources

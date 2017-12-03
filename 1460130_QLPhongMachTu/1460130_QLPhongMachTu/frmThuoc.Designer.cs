@@ -38,8 +38,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvThuoc = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.ColID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTenThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtGia = new _1460130_QLPhongMachTu.NumberTexbox();
+            this.btnXoaTrang = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -52,7 +56,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(594, 56);
+            this.panel1.Size = new System.Drawing.Size(626, 56);
             this.panel1.TabIndex = 1;
             // 
             // label1
@@ -68,22 +72,25 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnXoaTrang);
+            this.groupBox1.Controls.Add(this.txtGia);
             this.groupBox1.Controls.Add(this.btnCapNhat);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThem);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtTen);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(594, 62);
+            this.groupBox1.Size = new System.Drawing.Size(626, 87);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(509, 23);
+            this.btnCapNhat.Location = new System.Drawing.Point(545, 23);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(74, 21);
             this.btnCapNhat.TabIndex = 6;
@@ -93,7 +100,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(429, 23);
+            this.btnXoa.Location = new System.Drawing.Point(465, 23);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(74, 21);
             this.btnXoa.TabIndex = 7;
@@ -103,7 +110,7 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(349, 23);
+            this.btnThem.Location = new System.Drawing.Point(385, 23);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(74, 21);
             this.btnThem.TabIndex = 8;
@@ -131,9 +138,9 @@
             // 
             this.groupBox2.Controls.Add(this.dgvThuoc);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 118);
+            this.groupBox2.Location = new System.Drawing.Point(0, 143);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(594, 394);
+            this.groupBox2.Size = new System.Drawing.Size(626, 369);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách thuốc";
@@ -143,14 +150,24 @@
             this.dgvThuoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvThuoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColID,
-            this.ColTenThuoc});
+            this.ColTenThuoc,
+            this.ColGia});
             this.dgvThuoc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvThuoc.Location = new System.Drawing.Point(3, 16);
             this.dgvThuoc.Name = "dgvThuoc";
             this.dgvThuoc.ReadOnly = true;
-            this.dgvThuoc.Size = new System.Drawing.Size(588, 375);
+            this.dgvThuoc.Size = new System.Drawing.Size(620, 350);
             this.dgvThuoc.TabIndex = 0;
             this.dgvThuoc.CurrentCellChanged += new System.EventHandler(this.dgvThuoc_CurrentCellChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Giá";
             // 
             // ColID
             // 
@@ -167,11 +184,35 @@
             this.ColTenThuoc.Name = "ColTenThuoc";
             this.ColTenThuoc.ReadOnly = true;
             // 
+            // ColGia
+            // 
+            this.ColGia.DataPropertyName = "Gia";
+            this.ColGia.HeaderText = "Giá";
+            this.ColGia.Name = "ColGia";
+            this.ColGia.ReadOnly = true;
+            // 
+            // txtGia
+            // 
+            this.txtGia.Location = new System.Drawing.Point(90, 50);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(199, 20);
+            this.txtGia.TabIndex = 9;
+            // 
+            // btnXoaTrang
+            // 
+            this.btnXoaTrang.Location = new System.Drawing.Point(307, 23);
+            this.btnXoaTrang.Name = "btnXoaTrang";
+            this.btnXoaTrang.Size = new System.Drawing.Size(75, 22);
+            this.btnXoaTrang.TabIndex = 10;
+            this.btnXoaTrang.Text = "Xóa trắng";
+            this.btnXoaTrang.UseVisualStyleBackColor = true;
+            this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
+            // 
             // frmThuoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(594, 512);
+            this.ClientSize = new System.Drawing.Size(626, 512);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
@@ -200,8 +241,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvThuoc;
+        private System.Windows.Forms.Label label3;
+        private NumberTexbox txtGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTenThuoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColGia;
+        private System.Windows.Forms.Button btnXoaTrang;
 
     }
 }

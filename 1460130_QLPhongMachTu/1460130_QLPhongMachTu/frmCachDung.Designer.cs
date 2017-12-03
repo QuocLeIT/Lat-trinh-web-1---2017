@@ -43,6 +43,7 @@
             this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColTenCachDung = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColMoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnXoaTrang = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnXoaTrang);
             this.groupBox1.Controls.Add(this.btnCapNhat);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThem);
@@ -197,6 +199,16 @@
             this.ColMoTa.Name = "ColMoTa";
             this.ColMoTa.ReadOnly = true;
             // 
+            // btnXoaTrang
+            // 
+            this.btnXoaTrang.Location = new System.Drawing.Point(349, 50);
+            this.btnXoaTrang.Name = "btnXoaTrang";
+            this.btnXoaTrang.Size = new System.Drawing.Size(74, 21);
+            this.btnXoaTrang.TabIndex = 9;
+            this.btnXoaTrang.Text = "Xóa trắng";
+            this.btnXoaTrang.UseVisualStyleBackColor = true;
+            this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
+            // 
             // frmCachDung
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,5 +247,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColTenCachDung;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColMoTa;
+        private System.Windows.Forms.Button btnXoaTrang;
     }
 }

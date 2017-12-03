@@ -28,7 +28,7 @@ namespace _1460130_QLPhongMachTu
         {
 
             DataTable dt = new DataTable();
-            dt = dp.FillBang("select * from Thuoc order by TenThuoc");
+            dt = dp.FillBang("select ID, TenThuoc,  Format(GIa, '#') as GIa from Thuoc order by TenThuoc");
             dgvThuoc.DataSource = dt;
         }
 
@@ -39,7 +39,8 @@ namespace _1460130_QLPhongMachTu
                 SqlParameter p = new SqlParameter("@resurlt", SqlDbType.VarChar, 10);
                 p.Direction = ParameterDirection.Output;
                 int result = dp.ExcuteNonQuyery(CommandType.StoredProcedure, "sp_InserThuoc",
-                new SqlParameter { ParameterName = "@Ten", Value = txtTen.Text }, p);
+                new SqlParameter { ParameterName = "@Ten", Value = txtTen.Text },
+                new SqlParameter { ParameterName = "@Gia", Value = txtGia.Text }, p);
 
                 if (result <= 0)
                 {
@@ -48,6 +49,7 @@ namespace _1460130_QLPhongMachTu
                 else
                 {
                     txtTen.Text = "";
+                    txtGia.Text = "";
                     Loading();
                     MessageBox.Show("Thành công", "ThongBao");
                 }
@@ -103,6 +105,7 @@ namespace _1460130_QLPhongMachTu
                     p.Direction = ParameterDirection.Output;
                     int result = dp.ExcuteNonQuyery(CommandType.StoredProcedure, "sp_UpdateThuoc",
                     new SqlParameter { ParameterName = "@Ten", Value = txtTen.Text },
+                    new SqlParameter { ParameterName = "@Gia", Value = txtGia.Text },
                     new SqlParameter { ParameterName = "@ID", Value = n }, p);
 
                     if (result <= 0)
@@ -112,6 +115,7 @@ namespace _1460130_QLPhongMachTu
                     else
                     {
                         txtTen.Text = "";
+                        txtGia.Text = "";
                         Loading();
                         MessageBox.Show("Thành công", "ThongBao");
                     }
@@ -151,6 +155,7 @@ namespace _1460130_QLPhongMachTu
                 {
                     // int n = int.Parse(dgvCachDung.Rows[dgvCachDung.CurrentRow.Index].Cells[0].Value.ToString());
                     txtTen.Text = dgvThuoc.Rows[dgvThuoc.CurrentRow.Index].Cells[1].Value.ToString();
+                    txtGia.Text = dgvThuoc.Rows[dgvThuoc.CurrentRow.Index].Cells[2].Value.ToString();
                     
                 }
             }
@@ -158,6 +163,12 @@ namespace _1460130_QLPhongMachTu
             {
 
             }
+        }
+
+        private void btnXoaTrang_Click(object sender, EventArgs e)
+        {
+            txtGia.Text = "";
+            txtTen.Text = "";
         }
     }
 }
