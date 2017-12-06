@@ -77,7 +77,7 @@ namespace _1460130_QLPhongMachTu
                 if (dataGridView1.CurrentCellAddress.Y >= 0)
                 {
                     int n = int.Parse(dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString());
-                    if (MessageBox.Show("Bạn muốn sửa thông tin này", "ThongBao", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    if (MessageBox.Show("Bạn muốn xóa thông tin này", "ThongBao", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         SqlParameter p = new SqlParameter("@resurlt", SqlDbType.VarChar, 10);
                         p.Direction = ParameterDirection.Output;
@@ -164,11 +164,13 @@ namespace _1460130_QLPhongMachTu
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             Update();
+            XoaTrang();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
             Add();
+            XoaTrang();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

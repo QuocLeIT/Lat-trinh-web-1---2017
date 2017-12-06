@@ -60,17 +60,14 @@ namespace _1460130_QLPhongMachTu
 
         private void hóaĐơnThanhToánToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmHoaDonThanhToan frm = new frmHoaDonThanhToan();
+            frm.Show();
         }
 
-        private void báoCáoDoanhThuTheoNgàyToolStripMenuItem_Click(object sender, EventArgs e)
+        private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void báoCáoSửDụngThuốcToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            frmBaoCao frm = new frmBaoCao();
+            frm.Show();
         }
 
        

@@ -11,6 +11,7 @@ using System.Xml;
 using System.IO;
 using System.Configuration;
 
+
 namespace _1460130_QLPhongMachTu
 {
     class DataConnect
@@ -20,6 +21,9 @@ namespace _1460130_QLPhongMachTu
         private SqlDataAdapter dataAp { get; set; }
         private DataTable dataTable { get; set; }
         private SqlConnection Connection { get; set; }
+
+        static XmlDocument doc = null;
+        static XmlNode nodeRoot = null;
 
         public void Connect()
         {
@@ -46,7 +50,7 @@ namespace _1460130_QLPhongMachTu
             if (Connection != null && Connection.State == ConnectionState.Open)
                 Connection.Close();
         }
-
+      
         //strSql = sp_ReadData hoac strSql = "select * from Account"
         //bang ham Fillbang
         public DataTable ReadNoParemeter(string strSql)
@@ -227,6 +231,6 @@ namespace _1460130_QLPhongMachTu
         //{
         //      Console.WriteLine("\n\tUID: " + row["uid"] + ", pass: " + row["pass"] + ", type: " + row["type"]);
         //}
-   
+       
     }
 }
