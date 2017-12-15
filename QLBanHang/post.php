@@ -8,27 +8,60 @@ if (!$currentUser) {
 
 $success = true;
 
-if (isset($_POST['content'])) {
+if (isset($_POST['content']) && isset($_POST['tensp']) && isset($_POST['giaban']) && isset($_POST['soluong'])  && isset($_POST['xuatxu'])  && isset($_POST['loaisp'])  && isset($_POST['nhasx'])) {
   $content = $_POST['content'];
   $len = strlen($content);
 
   if ($len == 0 || $len > 1024) {
     $success = false;
   } else {
-    createPost($currentUser['id'], $content);
+    $id = createPostSP($_POST['tensp'], $_POST['giaban'], $_POST['soluong'], $_POST['xuatxu'],$_POST['loaisp'],$_POST['nhasx'], $content);
+
+
+  if(isset($_FILES['avatar']))
+  {
+
+      $fileName = $_FILES['avatar']['name'];
+      $fileSize = $_FILES['avatar']['size'];
+      $fileTemp = $_FILES['avatar']['tmp_name'];
+      $fileSave = 'uploads/sanpham/' . $id . '.jpg';
+      // userid.jpg
+      $result = move_uploaded_file($fileTemp, $fileSave);
+      if (!$result) {
+        $success = false;       
+      } else {
+        $newImage = resizeImage($fileSave, 250, 250);
+        imagejpeg($newImage, $fileSave);
+        $currentSP = findSPById($id);
+        $currentSP['hasAvatar'] = 1;
+        updateSP($currentSP);
+      }
+  }
+
     header('Location: post.php');
     exit();
   }
 }
 ?>
+
 <?php include 'header.php' ?>
+
+<style type="text/css">
+  
+  .bodypost{
+    width: 500px;
+}
+</style>
+
+
 <h1>Thêm sản phẩm mới</h1>
 <?php if (!$success) : ?>
 <div class="alert alert-danger" role="alert">
   Nội dung không được rỗng và dài quá 1024 ký tự!
 </div>
 <?php endif; ?>
-<form method="POST">
+<div class="bodypost">
+<form method="POST" enctype="multipart/form-data">
   <div class="form-group">
     <label for="tensp">Tên sản phẩm</label>
     <input type="text" class="form-control" id="tensp" name="tensp" placeholder="Điền tên sản phẩm" value="<?php echo isset($_POST['tensp']) ? $_POST['tensp'] : '' ?>">
@@ -64,7 +97,7 @@ if (isset($_POST['content'])) {
     <input type="file" class="form-control-file" id="avatar" name="avatar">
   </div>
 
-
   <button type="submit" class="btn btn-primary">Đăng</button>
 </form>
+<div>
 <?php include 'footer.php' ?>

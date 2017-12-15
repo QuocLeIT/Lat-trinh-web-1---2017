@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="assets/css/css.css">
+    <!--
+    <link rel="stylesheet" href="assets/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
 
-    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
@@ -87,12 +89,13 @@
               </li>
 
             <?php if ($currentUser['admin'] == 1) : ?>
+              <!--
               <li class="nav-item">
                 <a class="nav-link <?php echo ($page == 'post') ? 'active' : '' ?>" href="post.php">
                   Đăng sản phẩm
                 </a>
               </li>
-
+-->
               <div class="dropdown">
                 <button class="dropbtn">
                     <a class="nav-link <?php echo ($page == 'profile') ? 'active' : '' ?>" href="#">
@@ -100,6 +103,9 @@
                     </a>
                 </button>
                 <div class="dropdown-content">
+                  <a class="nav-link <?php echo ($page == 'post') ? 'active' : '' ?>" href="post.php">
+                    Đăng sản phẩm
+                  </a>
                   <a href="DonHang.php">Hóa đơn hàng</a>
                   <a href="#">DS sản phẩm</a>
                   <a href="Loai.php">DS loại sản phẩm</a>

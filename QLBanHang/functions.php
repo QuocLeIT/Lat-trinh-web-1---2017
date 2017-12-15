@@ -15,6 +15,14 @@ function findUserById($id) {
   return $user;
 }
 
+function findSPById($id) {
+  global $db;
+  $stmt = $db->prepare("SELECT * FROM sanpham WHERE id = ?");
+  $stmt->execute(array($id));
+  $sp = $stmt->fetch(PDO::FETCH_ASSOC);
+  return $sp;
+}
+
 function createUser($fullname, $email, $password, $phone) {
   global $db;
   $stmt = $db->prepare("INSERT INTO users (email, password, fullname, phone) VALUE (?, ?, ?, ?)");
@@ -29,6 +37,27 @@ function updateUser($user) {
   return $user;
 }
 
+function updateSP($sp) {
+  global $db;
+  $stmt = $db->prepare("UPDATE sanpham SET TenSP = ?, GiaBan = ?, SoLuongBan = ?, SoLuongTon = ?, XuatXu = ?, idLoai = ?, idNhaSanXuat = ?, content = ?, hasAvatar = ? WHERE id = ?");
+  $stmt->execute(array($sp['TenSP'], $sp['GiaBan'], $sp['SoLuongBan'], $sp['SoLuongTon'], $sp['XuatXu'], $sp['idLoai'], $sp['idNhaSanXuat'], $sp['content'], $sp['hasAvatar'], $sp['id']));
+  return $user;
+}
+
+function updateImageUser($imgFilename) {
+  global $db;
+  //mở file ảnh để đọc với chế độ đọc binary  
+  $fh = fopen($imgFilename, "rb");  
+  $imgData = fread($fh, filesize($imgFilename));  
+  fclose($fh);
+  //chèn nội dung file ảnh vào table imgData  
+  //$sql = "INSERT INTO tblImage (imgData) VALUES('" . mysql_real_escape_string($imgData, $conn) . "')";  
+  //mysql_query($sql, $conn);  
+  $stmt = $db->prepare("UPDATE users SET imgData = ? WHERE id = ?");
+  $stmt->execute(array($imgData, $_SESSION['userId']));
+  return 1;
+}
+
 function updateUserPassword($userId, $hashPassword) {
   global $db;
   $stmt = $db->prepare("UPDATE users SET password = ? WHERE id = ?");
@@ -39,6 +68,14 @@ function createPost($userId, $content) {
   global $db;
   $stmt = $db->prepare("INSERT INTO posts (userId, content, createdAt) VALUE (?, ?, CURRENT_TIMESTAMP())");
   $stmt->execute(array($userId, $content));
+  return $db->lastInsertId();
+}
+
+function createPostSP($tensp, $giaban, $soluong, $xuatxu, $loaisp, $nhasanxuat,$content) {
+  global $db;
+  $stmt = $db->prepare("INSERT INTO sanpham (TenSP, GiaBan, SoLuongBan, SoLuongTon, XuatXu, idLoai, idNhaSanXuat, content, createdAt) 
+    VALUE (?, ?, ?, ?, ?, ?, ?, ?,CURRENT_TIMESTAMP())");
+  $stmt->execute(array($tensp, $giaban, $soluong, $soluong, $xuatxu, $loaisp, $nhasanxuat,$content));
   return $db->lastInsertId();
 }
 
@@ -57,7 +94,29 @@ function getNewFeeds() {
   return $posts;
 }
 
+function gettopNew() {
+  global $db;
+  $stmt = $db->prepare("SELECT id, TenSP, SoLuotXem, GiaBan, SoLuongTon, hasAvatar, createdAt FROM sanpham ORDER BY createdAt DESC");
+  $stmt->execute();
+  $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  return $posts;
+}
 
+function gettopBanChay() {
+  global $db;
+  $stmt = $db->prepare("SELECT id, TenSP, SoLuotXem, GiaBan, SoLuongTon, hasAvatar, createdAt FROM sanpham ORDER BY SoLuongTon");
+  $stmt->execute();
+  $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  return $posts;
+}
+
+function gettopLuotXem() {
+  global $db;
+  $stmt = $db->prepare("SELECT id, TenSP, SoLuotXem, GiaBan, SoLuongTon, hasAvatar, createdAt FROM sanpham ORDER BY SoLuotXem DESC");
+  $stmt->execute();
+  $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  return $posts;
+}
 
 function getNewFeedsForUserId($userId) {
   global $db;
